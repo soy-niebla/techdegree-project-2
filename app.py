@@ -78,25 +78,10 @@ if __name__ == "__main__":
     app_running = True
     teams = balance_teams(constants.TEAMS, constants.PLAYERS)
     while app_running:
-        print("""
-**** MENU ****
-
-Here are your choises:
-1) Display Team Stats
-2) Quit
-
-        """)
+        print("\n**** MENU ****\n\nHere are your choises:\n1) Display Team Stats\n2) Quit\n\n")
         command = input("Please choose an option: ")
         if command == "1":
-            print("""
-Show The Stats
---------------------
-
-1) Panthers
-2) Bandits
-3) Warriors
-
-            """)
+            print("\nShow The Stats\n--------------------\n\n1) Panthers\n2) Bandits\n3) Warriors\n\n")
             team_name = input("Please choose an option (1, 2 or 3): ")
             try:
                 print(teams[int(team_name) - 1])
