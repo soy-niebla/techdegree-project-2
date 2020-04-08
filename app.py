@@ -18,7 +18,7 @@ class Team:
     def __init__(self, name, players):
         self.name = name
         self.players = players
-        self.height_average = sum([plyr.height for plyr in self.players]) / len(self.players)
+        self.height_average = sum([plyr.height for plyr in self.players])/len(self.players)
         self.experienced += sum([1 for plyr in self.players if plyr.experience])
         self.inexperienced += sum([1 for plyr in self.players if not plyr.experience])
         self.guardians = ", ".join([guard for plyr in self.players for guard in plyr.guardians])
@@ -66,10 +66,10 @@ def balance_teams(teams, players):
             inexperienced_players.append(player)
     
     #Distributes evenly the inexperienced and experienced players
-    for i in range(0, len(experienced_players) - 1, len(teams)):
-        team_players.append(Team(teams[int(i / len(teams))],
-        experienced_players[i: i + int(len(experienced_players) / len(teams))] +
-        inexperienced_players[i: i + int(len(inexperienced_players) / len(teams))]))
+    for i in range(0, len(experienced_players)-1, len(teams)):
+        team_players.append(Team(teams[int(i /len(teams))],
+        experienced_players[i:i+int(len(experienced_players)/len(teams))] +
+        inexperienced_players[i:i+int(len(inexperienced_players)/len(teams))]))
         
     return team_players
 
